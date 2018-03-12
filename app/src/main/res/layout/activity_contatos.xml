@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="40dp"
+    android:layout_gravity="center_vertical"
+    android:weightSum="1">
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:text="Contatos"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textColor="#ff6f00"/>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Email:"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#aaff6f00"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="secretaria@paroquiasaolucas.com.br"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#000000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Telefone:"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#aaff6f00"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="(011) 5841-6555"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#000000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Horário de atendimento:"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#aaff6f00"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="09:00 às 19:00 de segunda à sexta-feira, horário de Brasília (exceto feriados)."
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#000000"/>
+</LinearLayout>
+

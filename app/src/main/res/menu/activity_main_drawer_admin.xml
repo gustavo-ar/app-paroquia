@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_controle_financeiro"
+            android:icon="@drawable/ic_dinheiro_24dp"
+            android:title="Controle Financeiro" />
+        <item
+            android:id="@+id/nav_mensagens_paroco"
+            android:icon="@drawable/ic_email_white_24dp"
+            android:title="Mensagens Paroco" />
+        <item
+            android:id="@+id/nav_eventos"
+            android:icon="@drawable/ic_clientes_branco_24dp"
+            android:title="Eventos Home" />
+        <item
+            android:id="@+id/nav_visitantes"
+            android:icon="@drawable/ic_clientes_branco_24dp"
+            android:title="Visitantes" />
+        <item
+            android:id="@+id/nav_membros_pastorais"
+            android:icon="@drawable/ic_clientes_branco_24dp"
+            android:title="Membros Pastorais" />
+        <item
+            android:id="@+id/nav_pastorais"
+            android:icon="@drawable/ic_clientes_branco_24dp"
+            android:title="Pastorais" />
+        <item
+            android:id="@+id/nav_comunidades"
+            android:icon="@drawable/ic_clientes_branco_24dp"
+            android:title="Comunidades" />
+
+    </group>
+
+    <!--<item android:title="Comunicação">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_contato"-->
+                <!--android:icon="@drawable/ic_contato_branco_24dp"-->
+                <!--android:title="Contato" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_sobre"-->
+                <!--android:icon="@drawable/ic_sobre_branco_24dp"-->
+                <!--android:title="Batata" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>

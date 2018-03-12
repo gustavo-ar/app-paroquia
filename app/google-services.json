@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "285231867285",
+    "firebase_url": "https://sgpa-37148.firebaseio.com",
+    "project_id": "sgpa-37148",
+    "storage_bucket": "sgpa-37148.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285231867285:android:0170de0e029ee1c7",
+        "android_client_info": {
+          "package_name": "com.example.gustavoar.sgp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285231867285-9468c726ve7ep88a6o78k66edjjfstva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gustavoar.sgp",
+            "certificate_hash": "4299cf72475766c955df5a9a85d9e8236e878cba"
+          }
+        },
+        {
+          "client_id": "285231867285-2moh529on1bhus7528cl0ehld6vdkana.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_hV6TX7ryrPmza_Y5zBVUU4oI5oM72Us"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285231867285-2moh529on1bhus7528cl0ehld6vdkana.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

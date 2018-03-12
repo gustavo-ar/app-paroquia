@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dizimo"
+            android:icon="@drawable/ic_inbox_branco_24dp"
+            android:title="Dizimo" />
+        <item
+            android:id="@+id/nav_casamento"
+            android:icon="@drawable/ic_servicos_branco_24dp"
+            android:title="Casamento" />
+        <item
+            android:id="@+id/nav_batizado"
+            android:icon="@drawable/ic_clientes_branco_24dp"
+            android:title="Batizado" />
+        <item
+            android:id="@+id/nav_catequese"
+            android:icon="@drawable/ic_clientes_branco_24dp"
+            android:title="Catequese" />
+        <item
+            android:id="@+id/nav_documentos"
+            android:icon="@drawable/ic_clientes_branco_24dp"
+            android:title="Documentos" />
+
+    </group>
+
+    <item android:title="Comunicação">
+        <menu>
+            <item
+                android:id="@+id/nav_contato"
+                android:icon="@drawable/ic_contato_branco_24dp"
+                android:title="Contato" />
+            <item
+                android:id="@+id/nav_sobre"
+                android:icon="@drawable/ic_sobre_branco_24dp"
+                android:title="Batata" />
+        </menu>
+    </item>
+
+</menu>
