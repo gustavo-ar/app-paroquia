@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.List;
 import com.example.gustavoar.sgp.R;
+import com.example.gustavoar.sgp.model.Movimentacao;
 
 /**
  * Created by GUSTAVOAR on 04/03/2018.
