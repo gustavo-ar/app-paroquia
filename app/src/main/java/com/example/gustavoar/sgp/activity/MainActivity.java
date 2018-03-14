@@ -60,20 +60,27 @@ public class MainActivity extends IntroActivity {
                 .build());
 
 
+
+
+        // Cria o listener do fireauth
+        geraListenerFirebase();
+        //Cria o Objeto fireauth
+        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
         addOnPageChangeListener(new ViewPager.OnPageChangeListener(){
             @Override public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                if(position ==3){
-                    verificarUsuarioLogado();
-                }
+
             }
             @Override public void onPageSelected(int position) {
 
-               // Toast.makeText(getBaseContext(),position,Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getBaseContext(),position,Toast.LENGTH_SHORT).show();
 
                 //Verifica se o slide esta na opcao do login e valida se o mesmo ja encontra-se logado ou nao
                 if(position ==3){
-                //    autenticacao.signOut();
+                    //    autenticacao.signOut();
                     verificarUsuarioLogado();
+                }else{
+                    //Remove a autenticação caso saia do slid
+                    autenticacao.removeAuthStateListener(mAuthStateListener);
                 }
 
             }
@@ -82,11 +89,6 @@ public class MainActivity extends IntroActivity {
 
             }
         });
-
-        // Cria o listener do fireauth
-        geraListenerFirebase();
-        //Cria o Objeto fireauth
-        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
     }
 
     @Override
@@ -139,6 +141,7 @@ public class MainActivity extends IntroActivity {
             //descomentar aqui quando estiver pronto a tela principal
             //abrirTelaPrincipalAdmin();
             Toast.makeText(getBaseContext(),"Abre a tela Principal Admin",Toast.LENGTH_SHORT).show();
+            abrirTelaPrincipal();
         }else{
             Toast.makeText(getBaseContext(),"Abre a Tela Principal",Toast.LENGTH_SHORT).show();
             abrirTelaPrincipal();
@@ -176,9 +179,9 @@ public class MainActivity extends IntroActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(autenticacao != null){
+     /*   if(autenticacao != null){
             autenticacao.addAuthStateListener(mAuthStateListener);
-        }
+        }*/
 
     }
 
@@ -186,9 +189,9 @@ public class MainActivity extends IntroActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if (mAuthStateListener != null) {
+       /* if (mAuthStateListener != null) {
             autenticacao.removeAuthStateListener(mAuthStateListener);
-        }
+        }*/
 
     }
 
