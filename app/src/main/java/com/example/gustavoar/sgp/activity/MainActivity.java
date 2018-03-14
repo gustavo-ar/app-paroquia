@@ -2,9 +2,11 @@ package com.example.gustavoar.sgp.activity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.gustavoar.sgp.config.ConfiguracaoFirebase;
 import com.example.gustavoar.sgp.fragment.ParoquiaFragment;
@@ -12,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.firebase.ui.auth.AuthUI;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
+import com.heinrichreimersoftware.materialintro.app.OnNavigationBlockedListener;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 import com.example.gustavoar.sgp.R;
 
@@ -36,10 +39,10 @@ public class MainActivity extends IntroActivity {
                 .fragment(R.layout.intro_1)
                 .build());
 
-        addSlide(new FragmentSlide.Builder()
+      /*  addSlide(new FragmentSlide.Builder()
                 .background(android.R.color.white)
                 .fragment(R.layout.intro_2)
-                .build());
+                .build());*/
 
         addSlide(new FragmentSlide.Builder()
                 .background(android.R.color.white)
@@ -53,15 +56,44 @@ public class MainActivity extends IntroActivity {
 
         addSlide(new FragmentSlide.Builder()
                 .background(android.R.color.white)
-                .fragment(R.layout.intro_cadastro)
+                .fragment(R.layout.intro_cadastro_v2)
                 .build());
 
+
+        addOnPageChangeListener(new ViewPager.OnPageChangeListener(){
+            @Override public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                if(position ==3){
+                    verificarUsuarioLogado();
+                }
+            }
+            @Override public void onPageSelected(int position) {
+
+               // Toast.makeText(getBaseContext(),position,Toast.LENGTH_SHORT).show();
+
+                //Verifica se o slide esta na opcao do login e valida se o mesmo ja encontra-se logado ou nao
+                if(position ==3){
+                //    autenticacao.signOut();
+                    verificarUsuarioLogado();
+                }
+
+            }
+            @Override public void onPageScrollStateChanged(int state) {
+
+
+            }
+        });
+
+        // Cria o listener do fireauth
+        geraListenerFirebase();
+        //Cria o Objeto fireauth
+        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        verificarUsuarioLogado();
+        //verificarUsuarioLogado();Retirado para tratar no listener
+
     }
 
     public void btEntrar(View view) {
@@ -73,13 +105,14 @@ public class MainActivity extends IntroActivity {
     }
 
     public void verificarUsuarioLogado() {
-        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+
         //autenticacao.signOut();
        /* if (autenticacao.getCurrentUser() != null) {
             validarEmailLogin();
         }*/
-      //inserido por cassio para validar se ta autenticado ou nao
-       autenticarFirebase();
+     //Addiciona o listener ao objeto autenticação
+     autenticacao.addAuthStateListener(mAuthStateListener);
+
     }
 
     public void abrirTelaPrincipal() {
@@ -103,13 +136,16 @@ public class MainActivity extends IntroActivity {
 //            abrirTelaPrincipalAdmin();
 
         if (email.contains("gmail")){
-            abrirTelaPrincipalAdmin();
+            //descomentar aqui quando estiver pronto a tela principal
+            //abrirTelaPrincipalAdmin();
+            Toast.makeText(getBaseContext(),"Abre a tela Principal Admin",Toast.LENGTH_SHORT).show();
         }else{
+            Toast.makeText(getBaseContext(),"Abre a Tela Principal",Toast.LENGTH_SHORT).show();
             abrirTelaPrincipal();
         }
     }
 
-    private void autenticarFirebase(){
+    private void geraListenerFirebase(){
         //User is signed out
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -140,7 +176,10 @@ public class MainActivity extends IntroActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        autenticacao.addAuthStateListener(mAuthStateListener);
+        if(autenticacao != null){
+            autenticacao.addAuthStateListener(mAuthStateListener);
+        }
+
     }
 
     //Inserido por Cassio para pausar o listener da autenticação

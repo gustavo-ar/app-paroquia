@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://D:\Android\Projects\PRODUCAO\app-paroquia\SGP.iml" filepath="D:\Android\Projects\PRODUCAO\app-paroquia\SGP.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\Android\Projects\PRODUCAO\app-paroquia\app\app.iml" filepath="D:\Android\Projects\PRODUCAO\app-paroquia\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/app-paroquia.iml" filepath="$PROJECT_DIR$/.idea/app-paroquia.iml" />
     </modules>
   </component>
